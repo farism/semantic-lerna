@@ -12,8 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@develop
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm test
+      - run: yarn install
+      - run: yarn test
