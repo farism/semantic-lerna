@@ -1,0 +1,22 @@
+{
+  "name": "@semantic-lerna/package-c",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Faris Mustafa <farismmk@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "clean": "rimraf build ",
+    "dev": "webpack src/index.js --watch",
+    "lint-staged": "lint-staged",
+    "pretty": "prettier --write",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "24.9.0",
+    "lint-staged": "9.2.5",
+    "prettier": "1.18.2",
+    "rimraf": "3.0.0",
+    "webpack": "4.39.3"
+  }
+}
