@@ -16,6 +16,10 @@ const releaseBranch = 'master'
 
 const prereleaseBranch = 'develop'
 
+const env = {
+  SKIP_PREPARE_COMMIT_MSG: true,
+}
+
 function getCurrentBranch() {
   return sync('git', ['rev-parse', '--abbrev-ref', 'HEAD']).stdout
 }
@@ -32,14 +36,17 @@ function deploy() {
 
 function deployRelease() {
   try {
-    const result = sync('npm', [
-      'run',
-      'lerna',
-      'publish',
-      '--registry=http://localhost:4873',
-      '--yes',
-      '--conventional-commits',
-    ])
+    const result = sync(
+      'yarn',
+      [
+        'lerna',
+        'publish',
+        '--registry=http://localhost:4873',
+        '--yes',
+        '--conventional-commits',
+      ],
+      { env }
+    )
 
     console.log(result.stdout)
   } catch (e) {}
@@ -53,15 +60,20 @@ function deployPrerelease() {
         'lerna',
         'publish',
         '--registry=http://localhost:4873',
-        // '--yes',
-        '--conventional-prerelease',
         '--canary',
+        '--preid=rc',
+        '--pre-dist-tag=next',
+        //
+        // '--yes',
+        '--no-git-tag-version',
       ],
-      { stdio: 'inherit' }
+      { env }
     )
 
     console.log(result.stdout)
-  } catch (e) {}
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 function createBackfillPR() {}
