@@ -1,4 +1,4 @@
 node_modules
 build
 *.log
-deploy.js
+scripts/deploy.js
