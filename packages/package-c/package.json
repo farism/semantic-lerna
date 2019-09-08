@@ -1,14 +1,14 @@
 {
   "name": "@semantic-lerna/package-c",
   "version": "1.0.0",
-  "main": "src/index.js",
-  "module": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "author": "Faris Mustafa <farismmk@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "clean": "rimraf build ",
-    "dev": "webpack --watch",
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dev": "tsc --watch --target es6",
     "lint-staged": "lint-staged",
     "pretty": "prettier --write",
     "test": "jest"

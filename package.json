@@ -23,6 +23,7 @@
     }
   },
   "scripts": {
+    "build": "lerna run build",
     "dev": "lerna run dev",
     "pretty": "lerna run pretty",
     "test": "lerna run test"
