@@ -1,3 +1,3 @@
-export const cc = 'module-cc3'
+export const cc = 'module-cc4'
 
 export const ccc = 'module-ccc'
