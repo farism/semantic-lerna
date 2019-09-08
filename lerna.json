@@ -1,14 +1,11 @@
 {
   "command": {
     "publish": {
-      "conventionalCommits": true,
-      "message": "chore: publish"
+      "message": "chore: publish %s"
     }
   },
   "npmClient": "yarn",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "parallel": true,
   "useWorkspaces": true,
   "version": "2.0.3"
