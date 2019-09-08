@@ -7,3 +7,5 @@ export const cccc = 'module-cccc'
 export const ccccc = 'module-ccccc'
 
 export const cccccc = 'module-cccccc'
+
+export const ccccccc = 'module-ccccccc'
