@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/farism/semantic-lerna/compare/v1.0.0...v2.0.0) (2019-09-08)
+
+
+### Features
+
+* add some stuff to package-b ([65096db](https://github.com/farism/semantic-lerna/commit/65096db))
+* add typescript ([3a86001](https://github.com/farism/semantic-lerna/commit/3a86001))
+* remove something in package-b ([7a7f18f](https://github.com/farism/semantic-lerna/commit/7a7f18f))
+
+
+### BREAKING CHANGES
+
+* removing 'bb' in package-b
+
+
+
+
+
 # [1.0.0](https://github.com/farism/semantic-lerna/compare/v0.1.0...v1.0.0) (2019-09-08)
 
 
