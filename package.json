@@ -25,6 +25,7 @@
   "scripts": {
     "build": "lerna run build",
     "dev": "lerna run dev",
+    "deploy": "node scripts/deploy.js",
     "pretty": "lerna run pretty",
     "test": "lerna run test"
   },
@@ -32,10 +33,12 @@
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
     "@commitlint/config-lerna-scopes": "8.0.0",
+    "@octokit/rest": "16.28.9",
     "commitizen": "3.1.1",
     "conventional-changelog-cli": "2.0.21",
     "cz-conventional-changelog": "2.1.0",
     "cz-lerna-changelog": "2.0.2",
+    "execa": "2.0.4",
     "husky": "2.4.1",
     "lerna": "3.15.0"
   }
