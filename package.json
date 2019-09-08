@@ -42,6 +42,7 @@
     "cz-lerna-changelog": "2.0.2",
     "execa": "2.0.4",
     "husky": "2.4.1",
-    "lerna": "3.15.0"
+    "lerna": "3.15.0",
+    "semver": "6.3.0"
   }
 }
