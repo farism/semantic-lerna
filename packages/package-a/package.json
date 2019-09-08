@@ -1,6 +1,6 @@
 {
   "name": "@semantic-lerna/package-a",
-  "version": "1.0.0",
+  "version": "2.0.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "author": "Faris Mustafa <farismmk@gmail.com>",
@@ -10,11 +10,12 @@
     "clean": "rimraf dist",
     "dev": "tsc --watch --target es6",
     "lint-staged": "lint-staged",
+    "prepublish": "npm run build",
     "pretty": "prettier --write",
     "test": "jest"
   },
   "dependencies": {
-    "@semantic-lerna/package-b": "^1.0.0"
+    "@semantic-lerna/package-b": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",

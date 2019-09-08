@@ -1,6 +1,6 @@
 {
   "name": "@semantic-lerna/package-c",
-  "version": "1.0.0",
+  "version": "2.0.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "author": "Faris Mustafa <farismmk@gmail.com>",
@@ -10,16 +10,20 @@
     "clean": "rimraf dist",
     "dev": "tsc --watch --target es6",
     "lint-staged": "lint-staged",
+    "prepublish": "npm run build",
     "pretty": "prettier --write",
     "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
     "@babel/preset-env": "7.6.0",
+    "@babel/preset-typescript": "7.3.3",
+    "@types/jest": "24.0.18",
     "babel-jest": "24.9.0",
     "jest": "24.9.0",
     "lint-staged": "9.2.5",
     "prettier": "1.18.2",
-    "rimraf": "3.0.0"
+    "rimraf": "3.0.0",
+    "typescript": "3.6.2"
   }
 }
