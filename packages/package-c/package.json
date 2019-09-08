@@ -10,7 +10,6 @@
     "clean": "rimraf dist",
     "dev": "tsc --watch --target es6",
     "lint-staged": "lint-staged",
-    "prepublish": "npm run build",
     "pretty": "prettier --write",
     "test": "jest"
   },
