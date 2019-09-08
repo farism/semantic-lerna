@@ -31,23 +31,37 @@ function deploy() {
 }
 
 function deployRelease() {
-  sync('lerna', [
-    'publish',
-    '--registry=http://localhost:4873',
-    '--yes',
-    '--conventional-commits',
-  ])
+  try {
+    const result = sync('npm', [
+      'run',
+      'lerna',
+      'publish',
+      '--registry=http://localhost:4873',
+      '--yes',
+      '--conventional-commits',
+    ])
+
+    console.log(result.stdout)
+  } catch (e) {}
 }
 
 function deployPrerelease() {
-  sync('lerna', [
-    'publish',
-    '--verbose',
-    '--registry=http://localhost:4873',
-    // '--yes',
-    '--conventional-prerelease',
-    '--canary',
-  ])
+  try {
+    const result = sync(
+      'yarn',
+      [
+        'lerna',
+        'publish',
+        '--registry=http://localhost:4873',
+        // '--yes',
+        '--conventional-prerelease',
+        '--canary',
+      ],
+      { stdio: 'inherit' }
+    )
+
+    console.log(result.stdout)
+  } catch (e) {}
 }
 
 function createBackfillPR() {}
