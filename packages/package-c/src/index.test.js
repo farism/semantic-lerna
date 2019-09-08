@@ -1,7 +1,7 @@
-import { c } from './index'
+import { ccc } from './index'
 
 describe('module-c', function() {
   it('is module-c', function() {
-    expect(c).toBe('module-c')
+    expect(ccc).toBe('module-ccc')
   })
 })
