@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "semantic-lerna",
   "workspaces": [
     "packages/*"
   ],
