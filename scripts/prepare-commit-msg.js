@@ -1,5 +1,7 @@
 const { execSync } = require('child_process')
 
-execSync('exec < /dev/tty && git cz --hook --colors', {
-  stdio: 'inherit',
-})
+if (!process.env.SKIP_PREPARE_COMMIT_MSG) {
+  execSync('exec < /dev/tty && git cz --hook --colors', {
+    stdio: 'inherit',
+  })
+}
