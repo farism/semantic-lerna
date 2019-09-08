@@ -6,7 +6,6 @@
   },
   "npmClient": "yarn",
   "packages": ["packages/*"],
-  "parallel": true,
   "useWorkspaces": true,
   "version": "2.0.3"
 }
