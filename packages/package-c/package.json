@@ -1,6 +1,6 @@
 {
   "name": "@semantic-lerna/package-c",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "src/index.js",
   "module": "src/index.js",
   "author": "Faris Mustafa <farismmk@gmail.com>",
