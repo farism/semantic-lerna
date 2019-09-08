@@ -1,11 +1,9 @@
 name: core
 
 on:
-  pull_request:
-    branches:
-      - develop
   push:
     branches:
+      - master
       - develop
 
 jobs:
@@ -13,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-        with:
-          ref: develop
       - uses: actions/setup-node@v1
         with:
           node-version: 12
