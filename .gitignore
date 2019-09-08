@@ -3,3 +3,4 @@ build
 *.log
 scripts/publish.js
 dist
+build
