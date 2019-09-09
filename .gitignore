@@ -1,6 +1,6 @@
 node_modules
 build
 *.log
-scripts/publish.js
+scripts/deploy-packages.js
 dist
 build
