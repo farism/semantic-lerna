@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/farism/semantic-lerna/compare/v2.1.0...v2.1.1) (2019-09-09)
+
+
+### Bug Fixes
+
+* test the publish hotfix ([59c00d3](https://github.com/farism/semantic-lerna/commit/59c00d3))
+
+
+
+
+
 ## [2.0.4](https://github.com/farism/semantic-lerna/compare/v2.0.3...v2.0.4) (2019-09-08)
 
 **Note:** Version bump only for package @semantic-lerna/package-a

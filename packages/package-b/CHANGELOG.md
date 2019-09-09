@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/farism/semantic-lerna/compare/v2.1.0...v2.1.1) (2019-09-09)
+
+
+### Bug Fixes
+
+* fix something in pacakge-b ([640b283](https://github.com/farism/semantic-lerna/commit/640b283))
+
+
+
+
+
 ## [2.0.4](https://github.com/farism/semantic-lerna/compare/v2.0.3...v2.0.4) (2019-09-08)
 
 
