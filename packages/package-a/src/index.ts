@@ -8,4 +8,4 @@ export const aaa = `module-aaa`
 
 export const aaaa = `module-aaaa`
 
-export const aaaaa = `module-aaaaa`
+export const aaaaa = `module-aaaa`
