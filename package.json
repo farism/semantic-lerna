@@ -26,7 +26,7 @@
     "build": "lerna run build",
     "clean": "lerna run clean",
     "dev": "lerna run dev",
-    "publish": "node scripts/deploy.js",
+    "deploy:packages": "node scripts/deploy-packages.js",
     "pretty": "lerna run pretty",
     "test": "lerna run test"
   },
