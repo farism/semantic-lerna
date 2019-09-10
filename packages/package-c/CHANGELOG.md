@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/farism/semantic-lerna/compare/v2.1.1...v2.2.0) (2019-09-10)
+
+
+### Bug Fixes
+
+* fix something in pkg-c ([ce26bd8](https://github.com/farism/semantic-lerna/commit/ce26bd8))
+* fixing the c package ([4aae141](https://github.com/farism/semantic-lerna/commit/4aae141))
+
+
+### Features
+
+* add something else to pkg-c ([84aa60c](https://github.com/farism/semantic-lerna/commit/84aa60c))
+* adding in a new feature to c for test ([57befc2](https://github.com/farism/semantic-lerna/commit/57befc2))
+* change something else in package-c ([e6c1708](https://github.com/farism/semantic-lerna/commit/e6c1708))
+
+
+
+
+
 ## [2.1.1](https://github.com/farism/semantic-lerna/compare/v2.1.0...v2.1.1) (2019-09-09)
 
 **Note:** Version bump only for package @semantic-lerna/package-c
