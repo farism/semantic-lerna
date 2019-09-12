@@ -1,6 +1,5 @@
 node_modules
 build
 *.log
-scripts/deploy-packages.js
 dist
 build
