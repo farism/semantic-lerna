@@ -9,3 +9,5 @@ export const aaa = `module-aaa`
 export const aaaa = `module-aaaa`
 
 export const aaaaa = `module-aaaa`
+
+export const newfeature = `module-a-new-feature`
