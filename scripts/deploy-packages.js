@@ -3,10 +3,10 @@ const Github = require('@octokit/rest')
 const conventionalRecommendedBump = require('conventional-recommended-bump')
 const semver = require('semver')
 
-const { GH_TOKEN } = process.env
+const { GITHUB_TOKEN } = process.env
 
-if (!GH_TOKEN) {
-  throw new Error('Missing `GH_TOKEN` env variable')
+if (!GITHUB_TOKEN) {
+  throw new Error('Missing `GITHUB_TOKEN` env variable')
 }
 
 const releaseBranch = 'master'
@@ -18,7 +18,7 @@ const owner = 'farism'
 const repo = 'semantic-lerna'
 
 const gh = new Github({
-  auth: GH_TOKEN,
+  auth: GITHUB_TOKEN,
 })
 
 const syncArgs = {
@@ -37,7 +37,7 @@ function getUnreleasedChangelog() {
 }
 
 function formatErrors(e) {
-  return JSON.stringify(e.errors[0], null, 2)
+  return JSON.stringify(e.errors, null, 2)
 }
 
 function getPrereleaseBump() {
@@ -144,7 +144,7 @@ function mergeBackfillPR(pull_number, commit_title) {
 
     console.log('backfill PR merged')
   } catch (e) {
-    console.log('backfill PR merge failed', formatErrors(e))
+    console.error('backfill PR merge failed', formatErrors(e))
   }
 }
 
@@ -167,7 +167,7 @@ async function fetchExistingPrereleasePR() {
     console.error('fetching existing prerelease pr failed', formatErrors(e))
   }
 
-  console.log('could not find an existing prerelease PR found')
+  console.log('could not find an existing prerelease PR')
 
   return null
 }
@@ -200,7 +200,7 @@ async function createPrereleasePR(bump) {
       // return early so we don't run the create
       return
     } catch (e) {
-      console.log('updating prerelease PR failed', formatErrors(e))
+      console.error('updating prerelease PR failed', formatErrors(e))
     }
   }
 
