@@ -200,12 +200,12 @@ async function createPrereleasePR(bump) {
       })
 
       console.log('prerelease PR updated')
-
-      // return early so we don't run the create
-      return
     } catch (e) {
       console.error('updating prerelease PR failed', formatErrors(e))
     }
+
+    // return early so we don't run the create
+    return
   }
 
   console.log('creating prerelease PR...')
