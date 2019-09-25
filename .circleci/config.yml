@@ -27,4 +27,4 @@ jobs:
 
       - deploy:
           name: Deploy packages
-            yarn run deploy:packages
+          command: yarn run deploy:packages
