@@ -1,13 +1,11 @@
 {
   "command": {
     "publish": {
-      "message": "chore: publish %s"
+      "message": "chore: publish %s [ci skip]"
     }
   },
   "npmClient": "yarn",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "useWorkspaces": true,
   "version": "2.5.0"
 }
