@@ -1,0 +1,30 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:11.15.0-stretch-browsers
+    steps:
+      - checkout
+      - run:
+          name: Setup Machine
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash
+
+      - run:
+          name: Sign in to Github as CircleCI Bot
+          command: |
+            git config --global user.email "farismmk@gmail.com";
+            git config --global user.name "Faris Mustafa"
+
+      - run:
+          name: Install dependencies
+          command: yarn install
+
+      - run:
+          name: Run Tests
+          command: yarn test
+
+      - deploy:
+          name: Deploy packages
+            yarn run deploy:packages
