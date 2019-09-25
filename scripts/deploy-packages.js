@@ -5,12 +5,12 @@ const semver = require('semver')
 
 console.log('hellow')
 
-const { GITHUB_TOKEN } = process.env
+const { GH_TOKEN } = process.env
 
 console.log('world')
 
-if (!GITHUB_TOKEN) {
-  throw new Error('Missing `GITHUB_TOKEN` env variable')
+if (!GH_TOKEN) {
+  throw new Error('Missing `GH_TOKEN` env variable')
 }
 
 const releaseBranch = 'master'
@@ -22,7 +22,7 @@ const owner = 'farism'
 const repo = 'semantic-lerna'
 
 const gh = new Github({
-  auth: GITHUB_TOKEN,
+  auth: GH_TOKEN,
 })
 
 const syncArgs = {
@@ -107,7 +107,7 @@ function publishRelease() {
         '--conventional-commits',
         '--create-release=github',
         '--yes',
-        // '--registry=http://localhost:4873',
+        // '--registry=http://localhost:4873', // for verdaccio local tests
       ],
       syncArgs
     )
@@ -130,7 +130,7 @@ function publishPrerelease(bump) {
         '--preid=rc',
         '--pre-dist-tag=next',
         '--yes',
-        // '--registry=http://localhost:4873',
+        // '--registry=http://localhost:4873', // for verdaccio local tests
       ],
       syncArgs
     )
