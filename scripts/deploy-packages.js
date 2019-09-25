@@ -33,27 +33,11 @@ const syncArgs = {
 }
 
 function getCurrentBranch() {
-  const { stdout, stderr } = sync('git', ['rev-parse', '--abbrev-ref', 'HEAD'])
-
-  console.log(stdout)
-
-  console.error(stderr)
-
-  return stdout
+  return sync('git', ['rev-parse', '--abbrev-ref', 'HEAD']).stdout
 }
 
 function getUnreleasedChangelog() {
-  const { stdout, stderr } = sync('yarn', [
-    '--silent',
-    'conventional-changelog',
-    '-u',
-  ])
-
-  console.log(stdout)
-
-  console.error(stderr)
-
-  return stdout
+  return sync('yarn', ['--silent', 'conventional-changelog', '-u']).stdout
 }
 
 function formatErrors(e) {
@@ -94,7 +78,7 @@ async function publish() {
 }
 
 function publishRelease() {
-  const { stdout, stderr } = sync(
+  sync(
     'yarn',
     [
       'lerna',
@@ -106,14 +90,10 @@ function publishRelease() {
     ],
     syncArgs
   )
-
-  console.log(stdout)
-
-  console.error(stderr)
 }
 
 function publishPrerelease(bump) {
-  const { stdout, stderr } = sync(
+  sync(
     'yarn',
     [
       'lerna',
@@ -129,10 +109,6 @@ function publishPrerelease(bump) {
     ],
     syncArgs
   )
-
-  console.log(stdout)
-
-  console.error(stderr)
 }
 
 async function createBackfillPR() {
@@ -167,7 +143,7 @@ function mergeBackfillPR(pull_number, commit_title) {
       repo,
       pull_number,
       commit_title,
-      merge_method: 'squash',
+      merge_method: 'merge',
     })
 
     console.log('backfill PR merged')
