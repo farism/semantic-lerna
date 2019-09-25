@@ -7,3 +7,5 @@ export const test = 'testing-cccc'
 export const test5 = 'module-c-test-5'
 
 export const test6 = 'module-c-test-6'
+
+export const test7 = 'module-c-test-7'
