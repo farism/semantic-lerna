@@ -86,7 +86,7 @@ function publishRelease() {
       '--conventional-commits',
       '--create-release=github',
       '--yes',
-      '--registry=http://localhost:4873',
+      // '--registry=http://localhost:4873',
     ],
     syncArgs
   )
@@ -105,7 +105,7 @@ function publishPrerelease(bump) {
       '--preid=rc',
       '--pre-dist-tag=next',
       '--yes',
-      '--registry=http://localhost:4873',
+      // '--registry=http://localhost:4873',
     ],
     syncArgs
   )
