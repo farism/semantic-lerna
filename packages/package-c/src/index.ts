@@ -13,3 +13,5 @@ export const test7 = 'module-c-test-777'
 export const test8 = 'module-c-test-8'
 
 export const test9 = 'module-c-test-9'
+
+export const test10 = 'module-c-test-10'
