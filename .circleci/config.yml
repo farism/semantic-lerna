@@ -9,6 +9,7 @@ jobs:
       - run:
           name: Setup Machine
           command: |
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
             curl -o- -L https://yarnpkg.com/install.sh | bash
 
       - run:
