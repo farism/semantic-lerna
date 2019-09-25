@@ -33,11 +33,27 @@ const syncArgs = {
 }
 
 function getCurrentBranch() {
-  return sync('git', ['rev-parse', '--abbrev-ref', 'HEAD']).stdout
+  const { stdout, stderr } = sync('git', ['rev-parse', '--abbrev-ref', 'HEAD'])
+
+  console.log(stdout)
+
+  console.error(stderr)
+
+  return stdout
 }
 
 function getUnreleasedChangelog() {
-  return sync('yarn', ['--silent', 'conventional-changelog', '-u']).stdout
+  const { stdout, stderr } = sync('yarn', [
+    '--silent',
+    'conventional-changelog',
+    '-u',
+  ])
+
+  console.log(stdout)
+
+  console.error(stderr)
+
+  return stdout
 }
 
 function formatErrors(e) {
@@ -78,7 +94,7 @@ async function publish() {
 }
 
 function publishRelease() {
-  sync(
+  const { stdout, stderr } = sync(
     'yarn',
     [
       'lerna',
@@ -90,10 +106,14 @@ function publishRelease() {
     ],
     syncArgs
   )
+
+  console.log(stdout)
+
+  console.error(stderr)
 }
 
 function publishPrerelease(bump) {
-  sync(
+  const { stdout, stderr } = sync(
     'yarn',
     [
       'lerna',
@@ -109,6 +129,10 @@ function publishPrerelease(bump) {
     ],
     syncArgs
   )
+
+  console.log(stdout)
+
+  console.error(stderr)
 }
 
 async function createBackfillPR() {
