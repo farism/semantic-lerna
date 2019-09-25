@@ -10,13 +10,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Build
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: yarn install
-      - run: yarn run build
-      - run: yarn run test
+        # with:
+        #   node-version: 12
+      # - run: yarn install
+      # - run: yarn run build
+      # - run: yarn run test
       - run: yarn run deploy:packages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

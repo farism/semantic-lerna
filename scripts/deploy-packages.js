@@ -3,7 +3,11 @@ const Github = require('@octokit/rest')
 const conventionalRecommendedBump = require('conventional-recommended-bump')
 const semver = require('semver')
 
+console.log('hellow')
+
 const { GITHUB_TOKEN } = process.env
+
+console.log('world')
 
 if (!GITHUB_TOKEN) {
   throw new Error('Missing `GITHUB_TOKEN` env variable')
