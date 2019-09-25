@@ -13,3 +13,5 @@ export const aaaaa = `module-aaaa`
 export const newfeature = `module-a-new-feature`
 
 export const feature2 = `module-a-feature2`
+
+export const feature3 = `module-a-feature3`
