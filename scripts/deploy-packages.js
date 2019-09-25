@@ -33,17 +33,29 @@ const syncArgs = {
 }
 
 function getCurrentBranch() {
-  return sync('git', ['rev-parse', '--abbrev-ref', 'HEAD']).stdout
+  try {
+    return sync('git', ['rev-parse', '--abbrev-ref', 'HEAD']).stdout
+  } catch (e) {
+    console.error(e)
+  }
+
+  return ''
 }
 
 function getUnreleasedChangelog() {
-  return sync('yarn', [
-    '--silent',
-    'conventional-changelog',
-    '-p',
-    'angular',
-    '-u',
-  ]).stdout
+  try {
+    return sync('yarn', [
+      '--silent',
+      'conventional-changelog',
+      '-p',
+      'angular',
+      '-u',
+    ]).stdout
+  } catch (e) {
+    console.error(e)
+  }
+
+  return ''
 }
 
 function formatErrors(e) {
@@ -84,37 +96,45 @@ async function publish() {
 }
 
 function publishRelease() {
-  sync(
-    'yarn',
-    [
-      'lerna',
-      'publish',
-      '--conventional-commits',
-      '--create-release=github',
-      '--yes',
-      // '--registry=http://localhost:4873',
-    ],
-    syncArgs
-  )
+  try {
+    sync(
+      'yarn',
+      [
+        'lerna',
+        'publish',
+        '--conventional-commits',
+        '--create-release=github',
+        '--yes',
+        // '--registry=http://localhost:4873',
+      ],
+      syncArgs
+    )
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 function publishPrerelease(bump) {
-  sync(
-    'yarn',
-    [
-      'lerna',
-      'publish',
-      bump,
-      '--canary',
-      '--include-merged-tags',
-      '--no-git-tag-version',
-      '--preid=rc',
-      '--pre-dist-tag=next',
-      '--yes',
-      // '--registry=http://localhost:4873',
-    ],
-    syncArgs
-  )
+  try {
+    sync(
+      'yarn',
+      [
+        'lerna',
+        'publish',
+        bump,
+        '--canary',
+        '--include-merged-tags',
+        '--no-git-tag-version',
+        '--preid=rc',
+        '--pre-dist-tag=next',
+        '--yes',
+        // '--registry=http://localhost:4873',
+      ],
+      syncArgs
+    )
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 async function createBackfillPR() {
