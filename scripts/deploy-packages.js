@@ -37,7 +37,13 @@ function getCurrentBranch() {
 }
 
 function getUnreleasedChangelog() {
-  return sync('yarn', ['--silent', 'conventional-changelog', '-u']).stdout
+  return sync('yarn', [
+    '--silent',
+    'conventional-changelog',
+    '-p',
+    'angular',
+    '-u',
+  ]).stdout
 }
 
 function formatErrors(e) {
