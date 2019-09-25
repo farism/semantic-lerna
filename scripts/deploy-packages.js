@@ -89,6 +89,8 @@ async function publish() {
   } else if (branch === prereleaseBranch) {
     const prereleaseBump = await getPrereleaseBump()
 
+    console.log({ prereleaseBump })
+
     publishPrerelease(prereleaseBump)
 
     await createPrereleasePR(prereleaseBump)
