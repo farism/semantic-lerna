@@ -1,6 +1,6 @@
 {
   "name": "@semantic-lerna/package-b",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "author": "Faris Mustafa <farismmk@gmail.com>",
@@ -15,7 +15,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@semantic-lerna/package-c": "^3.0.0"
+    "@semantic-lerna/package-c": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
