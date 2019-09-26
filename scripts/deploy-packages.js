@@ -3,11 +3,7 @@ const Github = require('@octokit/rest')
 const conventionalRecommendedBump = require('conventional-recommended-bump')
 const semver = require('semver')
 
-console.log('hellow')
-
 const { GH_TOKEN } = process.env
-
-console.log('world')
 
 if (!GH_TOKEN) {
   throw new Error('Missing `GH_TOKEN` env variable')
@@ -89,8 +85,6 @@ async function publish() {
   } else if (branch === prereleaseBranch) {
     const prereleaseBump = await getPrereleaseBump()
 
-    console.log({ prereleaseBump })
-
     publishPrerelease(prereleaseBump)
 
     await createPrereleasePR(prereleaseBump)
@@ -129,6 +123,7 @@ function publishPrerelease(bump) {
         '--no-git-tag-version',
         '--preid=rc',
         '--pre-dist-tag=next',
+        '--force-publish=*',
         '--yes',
         // '--registry=http://localhost:4873', // for verdaccio local tests
       ],
