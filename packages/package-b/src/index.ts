@@ -7,3 +7,5 @@ export const bb = 'bbb'
 export const testb = 'test-b'
 
 export const testbbb = 'test-bbb'
+
+export const test5 = 'test-b-5'
