@@ -202,9 +202,9 @@ async function fetchExistingPrereleasePR() {
 async function createPrereleasePR(bump) {
   const { version } = require('../lerna.json')
 
-  const nextVersion = semver.inc(version, bump)
+  const nextVersion = version === 'independent' ? '' : semver.inc(version, bump)
 
-  const title = `chore: prerelease ${nextVersion}`
+  const title = `chore: prerelease ${nextVersion}`.trim()
 
   const body = getUnreleasedChangelog()
 
