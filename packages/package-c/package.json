@@ -5,6 +5,9 @@
   "module": "dist/index.js",
   "author": "Faris Mustafa <farismmk@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
