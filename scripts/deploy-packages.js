@@ -3,11 +3,7 @@ const Github = require('@octokit/rest')
 const conventionalRecommendedBump = require('conventional-recommended-bump')
 const semver = require('semver')
 
-console.log('hellow')
-
 const { GH_TOKEN } = process.env
-
-console.log('world')
 
 if (!GH_TOKEN) {
   throw new Error('Missing `GH_TOKEN` env variable')
@@ -89,8 +85,6 @@ async function publish() {
   } else if (branch === prereleaseBranch) {
     const prereleaseBump = await getPrereleaseBump()
 
-    console.log({ prereleaseBump })
-
     publishPrerelease(prereleaseBump)
 
     await createPrereleasePR(prereleaseBump)
@@ -129,6 +123,7 @@ function publishPrerelease(bump) {
         '--no-git-tag-version',
         '--preid=rc',
         '--pre-dist-tag=next',
+        '--force-publish=*',
         '--yes',
         // '--registry=http://localhost:4873', // for verdaccio local tests
       ],
@@ -207,9 +202,9 @@ async function fetchExistingPrereleasePR() {
 async function createPrereleasePR(bump) {
   const { version } = require('../lerna.json')
 
-  const nextVersion = semver.inc(version, bump)
+  const nextVersion = version === 'independent' ? '' : semver.inc(version, bump)
 
-  const title = `chore: prerelease ${nextVersion}`
+  const title = `chore: prerelease ${nextVersion}`.trim()
 
   const body = getUnreleasedChangelog()
 
